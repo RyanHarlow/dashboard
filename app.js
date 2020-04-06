@@ -72,8 +72,8 @@ axios.all([requestOne, requestTwo, requestThree, requestFour, requestFive, reque
 
     let worldTitle1 = responseFive.data.data.children[0].data.title;
     let worldUrl1 = responseFive.data.data.children[0].data.url;
-    let WorldTitle2 = responseFive.data.data.children[1].data.title;
-    let WorldUrl2 = responseFive.data.data.children[1].data.url;
+    let worldTitle2 = responseFive.data.data.children[1].data.title;
+    let worldUrl2 = responseFive.data.data.children[1].data.url;
 
     let usaTitle1 = responseSix.data.data.children[0].data.title;
     let usaUrl1 = responseSix.data.data.children[0].data.url;
@@ -104,8 +104,8 @@ axios.all([requestOne, requestTwo, requestThree, requestFour, requestFive, reque
         worldTodayDeaths,
         worldTitle1,
         worldUrl1,
-        WorldTitle2,
-        WorldUrl2,
+        worldTitle2,
+        worldUrl2,
         usaTitle1,
         usaUrl1,
         usaTitle2,
