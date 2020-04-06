@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id='content-container'>
+    <div id='left-container'>
+    <p id='date-display'><strong>{{date}}</strong></p>
+    <div id='weather-container'>
+        <h3>Weather</h3>
+        <p id='weather-summary'><strong>Summary: </strong>{{summary}}</p>
+        <p id='current-temp'><strong>Temp: </strong></p>
+        <p id='weather-temps'><strong>High/Low: </strong>{{high}}/{{low}}</p>
+        <p id='weather-rain'><strong>Rain: </strong>{{rain}}%</p>
+    </div>
+    <div id='market-container'>
+        <h3>Stock Market</h3>
+        <p id='stock-price'><strong>SPY: </strong>${{todayPrice}} <span class='{{className}}'>({{percentChange}}%)</span></p>
+    </div>
+    <div>
+        <h3>Coronavirus</h3>
+        <table>
+            <tr><th>Country</th><th>Cases</th><th>Deaths</th></tr>
+            <tr><td>World</td><td id='world-cases'>{{worldCases}} ({{worldTodayCases}})</td><td id='world-deaths'>{{worldDeaths}} ({{worldTodayDeaths}})</td></tr>
+            <tr><td>Mexico</td><td id='mexico-cases'>{{mexCases}} ({{mexTodayCases}})</td><td id='mexico-deaths'>{{mexDeaths}} ({{mexTodayDeaths}})</td></tr>
+            <tr><td>USA</td><td id='usa-cases'>{{usaCases}} ({{usaTodayCases}})</td><td id='usa-deaths'>{{usaDeaths}} ({{usaTodayDeaths}})</td></tr>
+        </table>
+    </div>
+</div>
+<div id='right-container'>
+    <div id='news-container'>
+        <h3>News</h3>
+        <h3>World</h3>
+        <p class='news-link' id='world-1'><a class='news-link' href="{{worldUrl1}}">worldTitle1</a></p>
+        <p class='news-link' id='world-2'><a class='news-link' href="{{worldUrl2}}">worldTitle2</a></p>
+        <h3>USA</h3>
+        <p class='news-link' id='usa-1'><a class='news-link' href="{{usaUrl1}}">{{usaTitle1}}</a></p>
+        <p class='news-link' id='usa-2'><a class='news-link' href="{{usaUrl2}}">{{usaTitle2}}</a></p>
+    </div>
+</div>
+</div>
+</body>
+</html>

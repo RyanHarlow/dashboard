@@ -1,19 +1,16 @@
-var d = new Date();
-d = d.toString();
-d = d.split(' ').splice(0,4).join(' ');
-document.getElementById('date-display').innerHTML = '<strong>' + d + '</strong>';
+
 axios.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/0a66aae43f53b833b90117d8a6e9cf49/19.4326,-99.1332?units=us')
 .then((res) => {
     let weatherData = res.data;
     let currentTemp = weatherData.currently.temperature;
     let summary = weatherData.daily.data[0].summary;
-    let rain = weatherData.daily.data[0].precipProbability;
+    let rain = Math.round(weatherData.daily.data[0].precipProbability * 100);
     let high = weatherData.daily.data[0].temperatureHigh;
     let low = weatherData.daily.data[0].temperatureLow;
     document.querySelector('#weather-summary').innerHTML = '<strong>Summary: </strong>'+summary;
     document.querySelector('#current-temp').innerHTML = `<strong>Temp:</strong> ${currentTemp}`;
     document.querySelector('#weather-temps').innerHTML = `<strong>High/Low:</strong> ${high}/${low}`;
-    document.querySelector('#weather-rain').innerHTML = '<strong>Rain: </strong>' + rain*100 + '%';
+    document.querySelector('#weather-rain').innerHTML = '<strong>Rain: </strong>' + rain + '%';
 })
 
 axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&apikey=V31LPRNO68PPQF9H')
